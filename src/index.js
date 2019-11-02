@@ -51,6 +51,7 @@ class Keyboard extends React.Component {
                     { this.renderKey("x") }
                 </div>
                 <div className='row'>
+                    { this.renderKey("C") }
                     { this.renderKey(0) }
                     { this.renderKey("=") }
                     { this.renderKey("/") }
@@ -81,15 +82,28 @@ class Calculator extends React.Component {
             });
         } else if (e === "=") {
             let product;
-            const second_value = this.state.operand_2 ? this.state.operand_2 : this.state.result
+            const second_value = this.state.operand_2 ? this.state.operand_2 : this.state.result;
             if (this.state.function === "+") {
-                product = this.state.operand_1 + second_value
+                product = this.state.operand_1 + second_value;
+            } else if (this.state.function === "-") {
+                product = this.state.operand_1 - second_value;
+            } else if (this.state.function === "x") {
+                product = this.state.operand_1 * second_value;
+            } else if (this.state.function === "/") {
+                product = this.state.operand_1 / second_value;
             }
             this.setState({
                 result: product,
                 operand_1: product,
-                operand_2: second_value,
-            })
+                operand_2: this.state.result,
+            });
+        } else if (e === "C") {
+            this.setState({
+                function: null,
+                operand_1: 0,
+                operand_2: 0,
+                result: 0,
+            });
         } else {
             this.setState({
                 result: this.state.result * 10 + e,
