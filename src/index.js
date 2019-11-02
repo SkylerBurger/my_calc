@@ -12,7 +12,11 @@ function Screen(props) {
 
 function Key(props) {
     return (
-        <div className='key' value={props.value} onClick={ props.onClick }>
+        <div 
+            className={`key value_${props.value}`}
+            value={props.value} 
+            onClick={ props.onClick }
+        >
             <p>{ props.value }</p>
         </div>
     )
@@ -30,7 +34,7 @@ class Keyboard extends React.Component {
     
     render() {
         return (
-            <>
+            <div className="keyboard">
                 {/* TODO: DRY this up */}
                 <div className='row'>
                     { this.renderKey(1) }
@@ -56,7 +60,7 @@ class Keyboard extends React.Component {
                     { this.renderKey("=") }
                     { this.renderKey("/") }
                 </div>
-            </>
+            </div>
         );
     }
 }

@@ -1,0 +1,75 @@
+@import url("reset.css");
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono|VT323&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+.calculator {
+    position: relative;
+    width: 200px;
+    height: 400px;
+    margin: auto;
+    top: 20px;
+    background-color: rgb(47, 136, 131);
+    border: 1px solid black;
+}
+
+.screen {
+    display: flex;
+    flex-flow: column-reverse;
+    position: relative;
+    height: 100px;
+    width: 150px;
+    margin: 25px 25px 40px 25px;
+    background-color: rgb(136, 136, 136);
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.screen p {
+    display: block;
+    position: relative;
+    bottom: 5px;
+    right: 5px;
+    font-family: "VT323", sans-serif;
+    font-size: 35px;
+    text-align: right;
+}
+
+.keyboard {
+    height: 200px;
+    width: 200px;
+    margin: auto;
+}
+
+.key {
+    float: left;
+    height: 40px;
+    width: 40px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: rgb(136, 136, 136);
+}
+
+.value_C {
+    background-color: rgb(201, 77, 77);
+}
+
+.key p {
+    display: block;
+    position: relative;
+    height: 10px;
+    top: -5px;
+    margin: auto;
+    font-family: "Ubuntu Mono", sans-serif;
+    text-align: center;
+    padding: 15px 0 15px 0;
+}
